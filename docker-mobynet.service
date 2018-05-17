@@ -1,0 +1,12 @@
+[Unit]
+  Description=MobyNet
+  After=docker.service
+  Requires=docker.service
+
+[Service]
+  TimeoutStartSec=0
+  KillMode=none
+  ExecStart=-/usr/bin/docker network create mobynet
+
+[Install]
+  WantedBy=multi-user.target
